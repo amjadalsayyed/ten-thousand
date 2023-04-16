@@ -69,8 +69,12 @@ class GameLogic:
         if num_counter[6] == 6:
              unbancked_points+= 4800
         # 3 pairs      
-        if len(num_counter) == 3 and len(set(num_counter.values())) == 1:
+        if len(num_counter) == 3 and len(set(num_counter.values())) == 1 and list(set(num_counter.values()))[0] == 2:
              unbancked_points += 1500
+
+        if len(num_counter) == 2 and list(set(num_counter.values()))[0] == 3:
+             unbancked_points = unbancked_points*2
+                
         
         # stright 1-6    
         if len(num_counter) == 6:
