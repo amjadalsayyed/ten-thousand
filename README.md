@@ -6,6 +6,10 @@
 
 ---
 
+## To Start game
+
+> - to run this game you need to type in terminal 'python ten_thousand/game.py'
+
 ## Setup
 
 > - To setup check the requirements.txt to install the required packages
@@ -14,4 +18,5 @@
 
 ### How do you run tests?
 
+> - uncomment the import line in game.py the comment the presnt one
 > - You need to run pytest in the tirmenal
