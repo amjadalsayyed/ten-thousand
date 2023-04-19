@@ -22,7 +22,7 @@ def quitter ():
         return print('OK. Maybe another time') 
     
 
-def start_game(round_num=1,total=0,number_dices = 6):
+def start_game(round_num=1,total=0,number_dices = 6,points = 0):
         """this function starts the rounds when the user type y to start the game"""
         
         user_choice = ''
@@ -61,9 +61,9 @@ def start_game(round_num=1,total=0,number_dices = 6):
                     index = roll_to_test_cheater.index(i)
                     roll_to_test_cheater.pop(index)
                           
+              number_dices = number_dices - len(dice_to_keep)    
+              points += points_calculate(dice_to_keep)
               
-              number_dices = number_dices - len(dice_to_keep)
-              points =  points_calculate(dice_to_keep)
               print(f"You have {points} unbanked points and {number_dices} dice remaining")
               print("(r)oll again, (b)ank your points or (q)uit:")     
               user_choice = input('> ')
@@ -71,8 +71,7 @@ def start_game(round_num=1,total=0,number_dices = 6):
                     end_game(total)
               elif user_choice == 'r':
                     if number_dices > 0 :
-                        points += points
-                        start_game(round_num,total,number_dices)
+                        start_game(round_num,total,number_dices,points)
                     else:
                           print('you ran out of dices new round will start\n you didnt bank yor points so you lost them')
                           round_num+=1
