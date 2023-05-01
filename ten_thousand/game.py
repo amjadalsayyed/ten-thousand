@@ -50,7 +50,7 @@ def start_game(round_num=1,total=0,number_dices = 6,points = 0):
               roll_to_test_cheater = list(first_roll)
               for i in dice_to_keep:
                     if i not in roll_to_test_cheater:
-                          print("""********************************************\n********************************************\n********* ya abn al-women alwes5ah *********\n***************  DON'T CHEAT  **************\n********************************************\n********************************************\n                TRY AGAIN   """)
+                          print("""********************************************\n********************************************\n*********                           *********\n***************  DON'T CHEAT  **************\n********************************************\n********************************************\n                TRY AGAIN   """)
                         #   print("*** "+unpacked_tuple.strip()+' ***') 
                         #   print("Enter dice to keep, or (q)uit:")
                         #   user_choice = input('> ')
