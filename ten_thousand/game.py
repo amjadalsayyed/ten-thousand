@@ -62,12 +62,15 @@ def start_game(round_num=1,total=0,number_dices = 6,points = 0):
                     points += points_calculate(dice_to_keep)
                     
                     
-              if not cheat_test:
+              while not cheat_test:
                      print("""Cheater!!! Or possibly made a typo...""")
                      print("*** "+unpacked_tuple.strip()+' ***')
                      print("Enter dice to keep, or (q)uit:")
                      user_choice = input('> ').replace(' ','')
                      dice_to_keep = tuple(int(x) for x in user_choice)
+                     cheat_test = validate_keepers(first_roll,dice_to_keep)
+
+
               if len(dice_to_keep) != 6:
                   number_dices = number_dices - len(dice_to_keep)    
                   points += points_calculate(dice_to_keep)

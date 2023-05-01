@@ -93,6 +93,7 @@ class GameLogic:
     
 
     def validate_keepers(tup1,tup2):
+         """this function will take two tuples and check if the first tuple contain the value from the scond tuple with the same itarrtion"""
          to_test_cheater = list(tup1)
          for i in tup2:
                     if i not in to_test_cheater:
@@ -108,7 +109,7 @@ class GameLogic:
          return True                
      
     def get_scorers(dice):
-      
+        """ this function will take a tuple and return a tuple contain the values that give a score """
 
         all_dice_score = GameLogic.calculate_score(dice)
 
