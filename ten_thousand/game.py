@@ -67,8 +67,12 @@ def start_game(round_num=1,total=0,number_dices = 6,points = 0):
                      print("*** "+unpacked_tuple.strip()+' ***')
                      print("Enter dice to keep, or (q)uit:")
                      user_choice = input('> ').replace(' ','')
-                     dice_to_keep = tuple(int(x) for x in user_choice)
-                     cheat_test = validate_keepers(first_roll,dice_to_keep)
+                     if user_choice == "q":
+                         return end_game(total)
+                         
+                     else:    
+                       dice_to_keep = tuple(int(x) for x in user_choice)
+                       cheat_test = validate_keepers(first_roll,dice_to_keep)
 
 
               if len(dice_to_keep) != 6:
