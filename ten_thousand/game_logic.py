@@ -89,5 +89,39 @@ class GameLogic:
         for i in range(int):
               x = random.randint(1,6)
               list.append(x)
-        return tuple(list)         
+        return tuple(list)  
+    
 
+    def validate_keepers(tup1,tup2):
+         to_test_cheater = list(tup1)
+         for i in tup2:
+                    if i not in to_test_cheater:
+                         #  print("""Cheater!!! Or possibly made a typo...""")
+                        #   print("*** "+unpacked_tuple.strip()+' ***') 
+                        #   print("Enter dice to keep, or (q)uit:")
+                        #   user_choice = input('> ')
+                        #   dice_to_keep = tuple(int(x) for x in user_choice)
+                          return False
+                         
+                    index = to_test_cheater.index(i)
+                    to_test_cheater.pop(index)
+         return True                
+     
+    def get_scorers(dice):
+      
+
+        all_dice_score = GameLogic.calculate_score(dice)
+
+        if all_dice_score == 0:
+            return tuple()
+
+        dice_with_score = []
+
+        for i, val in enumerate(dice):
+            sub_roll = dice[:i] + dice[i + 1 :]
+            sub_score = GameLogic.calculate_score(sub_roll)
+
+            if sub_score != all_dice_score:
+                dice_with_score.append(val)
+
+        return tuple(dice_with_score)
